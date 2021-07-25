@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="_css/modelo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtelieMaceloAlvarenga</title>
+</head>
+<header>Ateliê Marcelo Alavarenga</header>
+
+<body class=bg>
+    <nav id="menu">
+
+        <ul>
+            <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/')"><a href="index.html">Home</a></li>
+            <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/')"><a href="index.html">Sobre</a></li>
+            <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/')"><a href="index.html">Fotos/Eventos</a></li>
+            <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/')"><a href="produtos.html">Produtos</a></li>
+            <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/')"><a href="index.html">Contato</a></li>
+
+
+        </ul>
+    </nav>
+    <h2>Vitrine:</h2>
+
+    <div id="produtos">
+
+    </div>
+    <!---produtos-->
+    <h2>Carrinho:</h2>
+
+    <div id="carrinho">
+
+    </div>
+    <!--carrinho-->
+
+    <script>
+        const items = [{
+            id: 0,
+            nome: 'Tabua 1',
+            quantidade: 0,
+            img: 'tabua1.jpg'
+        }, {
+            id: 1,
+            nome: 'Tabua 2',
+            quantidade: 0,
+            img: 'tabua2.jpg'
+        }, {
+            id: 2,
+            nome: 'Tabua 3',
+            quantidade: 0,
+            img: 'tabua3.jpg'
+        }, ]
+
+        incializarLoja = () => {
+            var containerProdutos = document.getElementById("produtos");
+            items.map((val) => {
+                containerProdutos.innerHTML += ` 
+                <div class = "produtos-single" >
+                <img src = "` + val.img + `"/>
+                <p> ` + val.nome + ` </p>
+                <a key = "` + val.id + `"href = "#" > Adcionar ao carinho! <a/> 
+                 </div>   
+
+                `;
+            })
+
+        }
+
+        incializarLoja();
+
+        atualizarCarrinho = () => {
+            var containerCarrinho = document.getElementById("carrinho");
+            containerCarrinho.innerHTML = "";
+            items.map((val) => {
+                if (val.quantidade > 0) {
+                    containerCarrinho.innerHTML += ` 
+                <p>` + val.nome + ` | quantidade: ` + val.quantidade + `</p> 
+                <hr>  
+                `;
+                }
+            })
+        }
+        var links = document.getElementsByTagName('a');
+
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", function() {
+                let key = this.getAttribute('key');
+                items[key].quantidade++;
+                atualizarCarrinho();
+                return false;
+            })
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

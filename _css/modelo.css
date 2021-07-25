@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: Open Sans, sans-serif;
+}
+
+header {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 72px;
+    color: rgb(73, 36, 36);
+    font-style: italic;
+    text-shadow: 1px;
+    background-color: rgb(101, 107, 99);
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    background-image: url("../_imagens/fundopg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    background-color: black;
+}
+
+
+/*serve para deixar o menu horizontal*/
+
+#menu ul li {
+    display: inline;
+}
+
+#menu ul li a {
+    color: #fff;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background 3s;
+}
+
+
+/*server para trocar a cor ao passar o mouse*/
+
+#menu ul li a:hover {
+    background-color: rgb(219, 22, 22);
+}
+
+.prodTela img {
+    align-items: flex-start;
+    background-image: 2px;
+}
+
+#produtos,
+#carrinho {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+}
+
+#carrinho {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: block;
+}
+
+.produtos-single {
+    width: 100%;
+    padding: 0 20px;
+}
+
+h2 {
+    font-family: Open Sans;
+    color: #fff;
+}
+
+.const nome {
+    color: #fff;
+    font-size: 12px;
+}
